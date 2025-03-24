@@ -19,4 +19,5 @@ private:
     std::string m_SourceCode;
     std::vector<Token*> m_Tokens;
     size_t m_CurrentCharIndex;
+    size_t m_CurrentLine;
 };

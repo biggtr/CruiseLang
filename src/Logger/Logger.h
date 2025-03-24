@@ -14,7 +14,7 @@ struct LogMessage
     LogType LogType;
     std::string Message;
     size_t Line;
-    size_t column;
+    size_t Column;
 };
 
 class Logger
@@ -32,7 +32,10 @@ public:
     void PrintMessages() const;
     void Clear();
 private: 
-    Logger(bool useColors);
+    Logger(bool useColors)
+    {
+        m_UseColors = useColors;
+    }
     void Log(LogType logType, const std::string msg, size_t line, size_t column);
 
 private:

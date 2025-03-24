@@ -1,4 +1,5 @@
 #include "Scanner.h"
+#include "../Logger/Logger.h"
 
 Scanner::Scanner(const std::string& sourceCode)
         : m_SourceCode(sourceCode), m_CurrentCharIndex(0)
@@ -38,9 +39,14 @@ void Scanner::ScanToken()
             case ';': AddToken(TokenType::SEMICOLON); break;
             case '*': AddToken(TokenType::STAR); break; 
             default:
+                      Logger::Error("UnSupported Symbol" + std::string(1, currentChar), m_CurrentLine, 1);
                       break;
         
         }
         m_CurrentCharIndex++;
+    }
+    if(Logger::GetInstance().HasErrors())
+    {
+        Logger::GetInstance().PrintMessages();
     }
 }

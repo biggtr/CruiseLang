@@ -6,7 +6,7 @@ int main()
 {
 
     printf("Starting..!\n");
-    const std::string sourceCode = "int addTwoInts()";
+    const std::string sourceCode = "$ -+1";
     Scanner ourScanner = Scanner(sourceCode);
     return 0;
 }

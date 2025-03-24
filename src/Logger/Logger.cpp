@@ -29,7 +29,7 @@ void Logger::Info(const std::string& msg, size_t line, size_t column)
 bool Logger::HasErrors() const
 {
     return std::any_of(m_Messages.begin(),m_Messages.end(),
-            [](const auto& msg) { return msg.logType == LogType::ERROR; }
+            [](const auto& msg) { return msg.LogType == LogType::ERROR; }
             );
 }
 void Logger::PrintMessages() const
@@ -39,7 +39,7 @@ void Logger::PrintMessages() const
         std::cerr << "["
                   << (msg.LogType == LogType::ERROR ? "ERROR" : 
                       msg.LogType == LogType::WARNING ? "WARN" : "INFO")
-                  << "] Line " << msg.Line << ", Col " << msg.column
+                  << "] Line " << msg.Line << ", Col " << msg.Column
                   << ": " << msg.Message << "\n";
     }
 
