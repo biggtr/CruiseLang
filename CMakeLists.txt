@@ -10,6 +10,7 @@ set(
     SOURCES
     src/main.cpp
     src/Lexer/Token.cpp
+    src/Lexer/Scanner.cpp
 )
 add_executable(CruiseLang ${SOURCES})
 
