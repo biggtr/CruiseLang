@@ -37,6 +37,8 @@ void Scanner::ScanToken()
             case '+': AddToken(TokenType::PLUS); break;
             case ';': AddToken(TokenType::SEMICOLON); break;
             case '*': AddToken(TokenType::STAR); break; 
+            default:
+                      break;
         
         }
         m_CurrentCharIndex++;

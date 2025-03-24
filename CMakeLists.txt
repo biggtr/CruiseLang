@@ -11,6 +11,8 @@ set(
     src/main.cpp
     src/Lexer/Token.cpp
     src/Lexer/Scanner.cpp
+
+    src/Logger/Logger.cpp
 )
 add_executable(CruiseLang ${SOURCES})
 
