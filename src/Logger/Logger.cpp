@@ -36,11 +36,24 @@ void Logger::PrintMessages() const
 {
     for(auto& msg : m_Messages)
     {
+        const char* color = RESET;
+        switch (msg.LogType) 
+        {
+            case LogType::ERROR:   color = RED;    break;
+            case LogType::WARNING: color = YELLOW; break;
+            case LogType::INFO:    color = CYAN;   break;
+        }
+
+        if(m_UseColors)
+        {
+            std::cerr << color;
+        }
         std::cerr << "["
                   << (msg.LogType == LogType::ERROR ? "ERROR" : 
                       msg.LogType == LogType::WARNING ? "WARN" : "INFO")
                   << "] Line " << msg.Line << ", Col " << msg.Column
                   << ": " << msg.Message << "\n";
+
     }
 
 }

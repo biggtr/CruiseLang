@@ -39,6 +39,11 @@ private:
     void Log(LogType logType, const std::string msg, size_t line, size_t column);
 
 private:
+    static constexpr const char* RED = "\033[1;31m";
+    static constexpr const char* YELLOW = "\033[1;33m";
+    static constexpr const char* CYAN = "\033[1;36m";
+    static constexpr const char* RESET = "\033[0m";
+
     bool m_UseColors;
     std::vector<LogMessage> m_Messages;
 };

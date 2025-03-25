@@ -6,6 +6,10 @@ class Scanner
 
 private:
     bool AtTheEnd();
+    bool Match(const char& expected);
+    const char& Advance(); // const char is safe here cuz m_SourceCode outlives the reference
+    const char Peek();
+    
     void AddToken(TokenType type);
     void AddToken(TokenType type, const std::string& lexeme);
 
